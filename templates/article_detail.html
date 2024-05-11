@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kun_uz</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="maqola">
+            <a href="{% url 'index' %}">Orqaga</a>
+            <h2>{{ maqola.title }}</h2>
+            <img src="{{ maqola.imageURL }}">
+            <p> {{ maqola.description }} </p>
+            <h4>Author: {{ maqola.author }}</h4>
+            <p>Yaratilgan vaqti: {{ maqola.created_at }} </p>
+            <h4>{{ maqola.user_name }}</h4>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kun_uz</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% if request.user.is_authenticated %}
+        {% include "login_navbar.html" %}
+        {% for s_new in s_news %}
+        <div class="maqola">
+            <div>
+                <a href="{% url 'article_detail' s_new.id %}">{{ s_new.title }}</a>
+            </div>
+            <img src="{{ s_new.imageURL }}">
+            <p>Yaratilgan vaqti: {{ s_new.created_at }}</p>
+            <hr>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        {% include "navbar.html" %}
+        {% for s_new in s_news %}
+        <div class="maqola">
+            <h2>{{ s_new.title }}</h2>
+            <p>{{ s_new.description }}</p>
+            <h4>Author: {{ s_new.author }}</h4>
+            <p>Yaratilgan vaqti: {{ s_new.created_at }}</p>
+            <h4>{{ s_new.user_name }}</h4>
+            <hr>
+        </div>
+        {% endfor %}
+
+        {% endif %}
+    </div>
+</body>
+</html>

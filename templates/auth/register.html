@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kun_uz</title>
+    <link rel="stylesheet" href="{% static 'css/auth/style.css' %}">
+</head>
+<body>
+    <div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <h1>Register page</h1>
+        <label for="">Email</label>
+        <input name="email", type="email", placeholder="Emailingizni kiriting!">
+        <label for="">First name</label>
+        <input name="First name", type="text", placeholder="Familiyangizni kiriting!">
+        <label for="">Last name</label>
+        <input name="Last name", type="text", placeholder="Ismingizni kiriting kiriting!">
+        <label for="">Password1</label>
+        <input name="password1", type="password", placeholder="Passwordingizni kiriting!">
+        <label for="">Password2</label>
+        <input name="password2", type="password", placeholder="Passwordingizni qayta kiriting kiriting!">
+        <button type="submit">Send</button>
+    </form>
+    </div>
+</body>
+</html>

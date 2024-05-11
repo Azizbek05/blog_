@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kun_uz</title>
+    <link rel="stylesheet" href="{% static 'css/auth/style.css' %}">
+</head>
+<body>
+    <div class="container">
+
+    <form method="post">
+        {% csrf_token %}
+        <h1>Confirmation page</h1>
+        <input name="number", type="text", placeholder="Kelgan kodni yozing kiriting!">
+        <input name="email", type="email", placeholder="Email kiriting!">
+        <button type="submit">Send</button>
+    </form>
+
+    </div>
+</body>
+</html>
